@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_bottom_sheet">
+
+    <TextView
+        android:id="@+id/textview_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginLayout"
+        android:layout_marginEnd="@dimen/marginLayout"
+        android:text="Movie Title"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/h5"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checbox_favorite" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/rating_average"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/colorWhite"
+        android:rating="5"
+        app:layout_constraintStart_toStartOf="@id/textview_title"
+        app:layout_constraintTop_toBottomOf="@id/textview_title" />
+
+    <TextView
+        android:id="@+id/textview_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginSpace"
+        android:background="@drawable/shape_bg_textview"
+        android:paddingStart="@dimen/marginSpace"
+        android:paddingEnd="@dimen/marginSpace"
+        android:text="Date"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/caption"
+        app:layout_constraintStart_toStartOf="@id/textview_title"
+        app:layout_constraintTop_toBottomOf="@+id/rating_average"
+        tools:text="@tools:sample/lorem" />
+
+    <CheckBox
+        android:id="@+id/checbox_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:paddingTop="@dimen/marginLayout"
+        android:paddingStart="@dimen/marginSpace"
+        android:paddingEnd="@dimen/marginSpace"
+        android:button="@null"
+        android:drawableTop="@drawable/favorite_checked"
+        android:layout_marginEnd="@dimen/marginXLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textview_overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginLayout"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@tools:sample/lorem/random"
+        app:layout_constraintTop_toBottomOf="@+id/textview_release_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
