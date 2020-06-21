@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/FullScreen">
+        android:theme="@style/AppTheme.FullScreen">
         <activity android:name="co.id.katalogfilmkioser.features.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

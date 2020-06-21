@@ -16,7 +16,8 @@ abstract class SafeApiRequest {
         if (response.isSuccessful) {
             return response.body()!!
         } else {
-            throw ApiException(response.code().toString())
+            /*throw ApiException(response.code().toString())*/
+            throw Exception(response.code().toString())
         }
     }
 }

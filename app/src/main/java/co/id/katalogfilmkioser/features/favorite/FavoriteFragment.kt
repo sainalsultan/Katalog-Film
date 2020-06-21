@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.id.katalogfilmkioser.R
@@ -37,10 +38,15 @@ class FavoriteFragment : Fragment() {
         viewModel = ViewModelProviders.of(this,factory).get(FavoriteViewModel::class.java)
         viewModel.getAllFavoriteMovie()
         viewModel.allMovie.observe(viewLifecycleOwner, Observer {favorite ->
-            recyclerview_favorite.apply {
-                layoutManager = LinearLayoutManager(requireContext())
-                setHasFixedSize(true)
-                adapter = AdapterFavoriteMovies(favorite)
+            if (favorite.size == 0) {
+                textview_info.visibility = View.VISIBLE
+            }else{
+                textview_info.visibility = View.GONE
+                recyclerview_favorite.apply {
+                    layoutManager = LinearLayoutManager(requireContext())
+                    setHasFixedSize(true)
+                    adapter = AdapterFavoriteMovies(favorite)
+                }
             }
         })
 
